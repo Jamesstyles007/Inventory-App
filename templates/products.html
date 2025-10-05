@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Products</h2>
+
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-3">
+    <input type="text" name="product_id" class="form-control" placeholder="Product ID" required>
+  </div>
+  <div class="col-md-4">
+    <input type="text" name="name" class="form-control" placeholder="Product Name" required>
+  </div>
+  <div class="col-md-4">
+    <input type="text" name="description" class="form-control" placeholder="Description">
+  </div>
+  <div class="col-md-1">
+    <button class="btn btn-primary w-100">Add</button>
+  </div>
+</form>
+
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr><th>ID</th><th>Name</th><th>Description</th><th>Actions</th></tr>
+  </thead>
+  <tbody>
+    {% for p in products %}
+    <tr>
+      <td>{{ p.product_id }}</td>
+      <td>{{ p.name }}</td>
+      <td>{{ p.description }}</td>
+      <td>
+        <a href="{{ url_for('edit_product', pid=p.product_id) }}" class="btn btn-sm btn-primary">Edit</a>
+        <a href="{{ url_for('delete_product', pid=p.product_id) }}" class="btn btn-sm btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

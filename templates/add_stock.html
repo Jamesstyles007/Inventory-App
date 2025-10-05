@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Stock to Location</h2>
+
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-3">
+    <select name="product_id" class="form-control" required>
+      <option value="">Select Product</option>
+      {% for p in products %}
+      <option value="{{ p.product_id }}">{{ p.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-4">
+    <input type="text" name="location" class="form-control" placeholder="Enter Location" required>
+  </div>
+  <div class="col-md-3">
+    <input type="number" name="qty" class="form-control" placeholder="Quantity" required>
+  </div>
+  <div class="col-md-2">
+    <button class="btn btn-success w-100">Add Stock</button>
+  </div>
+</form>
+
+<hr>
+
+{% endblock %}

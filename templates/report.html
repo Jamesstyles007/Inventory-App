@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Inventory Report</h2>
+
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr><th>Product</th><th>Location</th><th>Balance Qty</th></tr>
+  </thead>
+  <tbody>
+    {% for (product, location), qty in report.items() %}
+    <tr>
+      <td>{{ product }}</td>
+      <td>{{ location }}</td>
+      <td>{{ qty }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% if totals %}
+<h4>Product Totals</h4>
+<table class="table table-bordered">
+  <thead class="table-dark">
+    <tr><th>Product</th><th>Total Quantity</th></tr>
+  </thead>
+  <tbody>
+    {% for product, qty in totals.items() %}
+    <tr>
+      <td>{{ product }}</td>
+      <td>{{ qty }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% if not report %}
+<p class="text-muted">No movements or stock entries recorded yet.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Product Movements</h2>
+
+<form method="POST" class="row g-3 mb-4">
+  <div class="col-md-3">
+    <select name="product_id" class="form-control" required>
+      <option value="">Select Product</option>
+      {% for p in products %}
+      <option value="{{ p.product_id }}">{{ p.name }}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="col-md-3">
+    <input type="text" name="from_location" class="form-control" placeholder="From Location (optional)">
+  </div>
+  <div class="col-md-3">
+    <input type="text" name="to_location" class="form-control" placeholder="To Location (optional)">
+  </div>
+  <div class="col-md-2"><input type="number" name="qty" class="form-control" placeholder="Qty" required></div>
+  <div class="col-md-1"><button name="add" value="1" class="btn btn-primary w-100">Add</button></div>
+</form>
+
+<table class="table table-bordered">
+  <thead class="table-dark"><tr><th>ID</th><th>Product</th><th>From</th><th>To</th><th>Qty</th><th>Actions</th></tr></thead>
+  <tbody>
+    {% for m in movements %}
+    <tr>
+      <td>{{ m.movement_id }}</td>
+      <td>{{ m.product_id }}</td>
+      <td>{{ m.from_location or '-' }}</td>
+      <td>{{ m.to_location or '-' }}</td>
+      <td>{{ m.qty }}</td>
+      <td>
+        <a href="{{ url_for('delete_movement', mid=m.movement_id) }}" class="btn btn-sm btn-danger">Delete</a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}

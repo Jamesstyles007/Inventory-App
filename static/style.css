@@ -1,0 +1,18 @@
+body {
+    background-color: plum;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.table {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
