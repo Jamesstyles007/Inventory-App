@@ -34,7 +34,22 @@
 </table>
 {% endif %}
 
-{% if not report %}
-<p class="text-muted">No movements or stock entries recorded yet.</p>
-{% endif %}
+<h4>Movement History</h4>
+<table class="table table-bordered">
+  <thead class="table-secondary">
+    <tr><th>ID</th><th>Product</th><th>From</th><th>To</th><th>Qty</th><th>Timestamp</th></tr>
+  </thead>
+  <tbody>
+    {% for m in movements %}
+    <tr>
+      <td>{{ m.movement_id }}</td>
+      <td>{{ m.product_id }}</td>
+      <td>{{ m.from_location or '-' }}</td>
+      <td>{{ m.to_location or '-' }}</td>
+      <td>{{ m.qty }}</td>
+      <td>{{ m.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
