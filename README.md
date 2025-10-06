@@ -68,9 +68,6 @@ cd Inventory-App
 
 ````
 
-
-```
-
 ### 2️⃣ Install Dependencies
 
 ```bash
