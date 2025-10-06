@@ -135,27 +135,27 @@ http://127.0.0.1:5000/
 ## Screenshots (Optional for GitHub)
 
 ## Login
-![login] (images/Login.png)
+![login](images/Login.png)
 
 
 ## Home
-![Home]  (images/Home.png)
+![Home](images/Home.png)
 
 
 ## Products
-![Products] (images/Products.png)
+![Products](images/Products.png)
 
 
 ## Products Movements
-![Products_Movements] (images/Products Movements.png)
+![Products_Movements](images/Products Movements.png)
 
 
 ## Add Stock
-![Add_Stock] (images/Add Stock.png)
+![Add_Stock](images/Add Stock.png)
 
 
 ## Report
-![Report] (images/Report.png)
+![Report](images/Report.png)
 
 
 ---
