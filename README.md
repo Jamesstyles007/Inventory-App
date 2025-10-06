@@ -147,11 +147,11 @@ http://127.0.0.1:5000/
 
 
 ## Products Movements
-![Products_Movements](images/Products Movements.png)
+![Products_Movements](images/Products_Movements.png)
 
 
 ## Add Stock
-![Add_Stock](images/Add Stock.png)
+![Add_Stock](images/Add_Stock.png)
 
 
 ## Report
